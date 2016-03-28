@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ContactsBookApp.Models.Contact>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>My Contacts</h2>
+
+@foreach(var c in (IEnumerable<ContactsBookApp.Models.Contact>)@ViewBag.Contacts)
+{
+    <div class="well">
+        <h3><strong>@Html.DisplayFor(modelItem => c.first_name) @Html.DisplayFor(model => c.last_name)</strong></h3>
+        <ul style="list-style: none;">
+            <li>
+                <strong>Contact No.</strong>
+                @Html.DisplayFor(modelItem => c.contact_no)
+            </li>
+            <li>
+                <strong>Email Address</strong>
+                @Html.DisplayFor(modelItem => c.email_addr)
+            </li>
+            <li>
+                <strong>Address</strong>
+                @Html.DisplayFor(modelItem => c.addr)
+            </li>
+        </ul>
+    </div>
+}
+
